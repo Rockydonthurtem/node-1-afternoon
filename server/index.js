@@ -7,6 +7,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use(express.static("./public/build"))
+
 const messagesBaseUrl = "/api/messages";
 app.post(messagesBaseUrl, mc.create);
 app.get(messagesBaseUrl, mc.read);
